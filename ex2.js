@@ -5,18 +5,12 @@ let students = [{name: "Joao", p1:7, p2:5},
                 {name: "Ana", p1:6, p2:8}]
 
 function aprovedStudents(students){
-   for(let i=0; i<students.length; i++)
+   for(let student of students)
    {
-      if(students[i].p1 + students[i].p2 >= 12)
-      {
-          console.log("A média do aluno " + students[i].name + " é " + (students[i].p1 + students[i].p2)/2);
-          console.log("Parabéns "+students[i].name+" você foi aprovado(a) no concurso!")
-      }
-      else
-      {
-        console.log("A média do aluno " + students[i].name + " é " + (students[i].p1 + students[i].p2)/2);
-        console.log("Não foi dessa vez "+students[i].name+" tente novamente!")
-      }
+     const average = (student.p1 + student.p2) / 2;
+     console.log("A média do aluno " + student.name + " é " + average);
+      if(average >= 6) console.log("Parabéns "+student.name+" você foi aprovado(a) no concurso!")
+      else console.log("Não foi dessa vez "+student.name+" tente novamente!")   
   }
 }
 aprovedStudents(students);
